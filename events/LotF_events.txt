@@ -195,26 +195,26 @@ country_event = { #Revolution event chain continue FOR BRITIAN
 	picture = DIPLOMACY_eventPicture
 	is_triggered_only = yes
 	major = yes
-	major_trigger = { 
-		OR = { 
+	major_trigger = {
+		OR = {
 			colonial_parent = { tag = GBR }
 			tag = GBR
 		}
 	}
-    fire_only_once = yes
+	fire_only_once = yes
 	option = {
 		name = lotf_events.8.a
 		add_historical_rival = FROM
 		FROM = { add_historical_rival = ROOT }
-		FROM = {			
+		FROM = {
 			hidden_effect = {
-				country_event = { id = lotf_events.7 days = 21 random = 7 }				
+				country_event = { id = lotf_events.7 days = 21 random = 7 }
 			}
 			tooltip = { country_event = { id = lotf_events.7 }
-			}	
+			}
 		}
-		add_opinion = { who = FROM modifier = boston_tea_party }		
-	}	
+		add_opinion = { who = FROM modifier = boston_tea_party }
+	}
 }
 country_event = { #CSA Gains Cores SC
 	id = lotf_events.9
@@ -886,12 +886,12 @@ country_event = { #Louisiana Joins Confederacy
     }
 }
 country_event = { #Arkansas Joins Confederacy
-    id = lotf_events.28
-    title = lotf_events.28.t
-    desc = lotf_events.28.d
-    picture = BORDER_TENSION_eventPicture
+	id = lotf_events.28
+	title = lotf_events.28.t
+	desc = lotf_events.28.d
+	picture = BORDER_TENSION_eventPicture
 	fire_only_once = yes
-    trigger = {
+	trigger = {
 		tag = USA
 		mississippi_plain_area = {
 			type = all
@@ -908,11 +908,11 @@ country_event = { #Arkansas Joins Confederacy
 	mean_time_to_happen = { 
 		months = 3
 	}
-    option = {
-        name = lotf_events.28.a
-		mississippi_plain_area = { add_core = CSA }
-		2515 = { add_core = CSA }
-		4886 = { add_core = CSA }
+	option = {
+		name = lotf_events.28.a
+			mississippi_plain_area = { add_core = CSA }
+			2515 = { add_core = CSA }
+			4886 = { add_core = CSA }
     }
 }
 country_event = { #East Texas Joins Confederacy
