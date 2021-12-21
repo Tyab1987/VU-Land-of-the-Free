@@ -58,17 +58,18 @@
 		position = 3		
 		provinces_to_highlight = {
 			OR = {
-				area = chesapeake_area
+				area = great_valley_area
 				area = carolinas_area
+				area = south_carolina_area
+				province_id = 2539
+				province_id = 929
+				province_id = 4880
+				province_id = 6009
 			}
-			OR = {
-				NOT = { owned_by = ROOT }
-				is_city = no
-			}
-				
+			NOT = { owned_by = ROOT }
 		}
 		trigger = { 
-			chesapeake_area = {
+			great_valley_area = {
 				type = all
 				owned_by = ROOT
 				is_city = yes
@@ -77,10 +78,31 @@
 				type = all
 				owned_by = ROOT
 				is_city = yes
-			}				
+			}
+			south_carolina_area = {
+				type = all
+				owned_by = ROOT
+				is_city = yes
+			}
+			2539 = {
+				owned_by = ROOT
+				is_city = yes
+			}
+			929 = {
+				owned_by = ROOT
+				is_city = yes
+			}
+			4880 = {
+				owned_by = ROOT
+				is_city = yes
+			}
+			6009 = {
+				owned_by = ROOT
+				is_city = yes
+			}
 		}
 		effect = {
-			952 = {
+			5953 = {
 				change_trade_goods = tobacco
 				add_base_manpower = 1
 				add_base_production = 1
@@ -90,7 +112,7 @@
 					duration = 3650
 				}
 			}
-			2547 = {
+			6039 = {
 				change_trade_goods = tobacco
 				add_base_manpower = 1
 				add_base_production = 1
@@ -100,8 +122,10 @@
 					duration = 3650
 				}
 			}	
-		chesapeake_area = { add_prosperity = 100}
-		carolinas_area = { add_prosperity = 100 }
+			great_valley_area = { add_prosperity = 100 }
+			carolinas_area = { add_prosperity = 100 }
+			south_carolina_area = { add_prosperity = 100 }
+			american_georgia_area = { add_prosperity = 100 }
 		}
 	}
 }
@@ -167,26 +191,61 @@
 		position = 3
 		provinces_to_highlight = {
 			OR = {
-				area = new_york_area
-				area = delaware_valley_area
+				area = upper_american_georgia_area
+				area = chesapeake_area
+				AND = {
+					area = susquehanna_area
+					colonial_region = colonial_eastern_america
+				}
+				area = south_iroquoisia_area
+				AND = {
+					area = hudson_valley_area
+					colonial_region = colonial_eastern_america
+				}
+				province_id = 2552
 			}
-			OR = {
-				NOT = { owned_by = ROOT }
-				is_city = no
-			}
-				
+			NOT = { owned_by = ROOT }
 		}
-		trigger = { 
-			new_york_area = {
+		trigger = {
+			upper_american_georgia_area = {
 				type = all
 				owned_by = ROOT
 				is_city = yes
 			}
-			delaware_valley_area = {
+			chesapeake_area = {
 				type = all
 				owned_by = ROOT
 				is_city = yes
-			}				
+			}
+			susquehanna_area = {
+				type = all
+				OR = {
+					NOT = { colonial_region = colonial_eastern_america }
+					AND = {
+						owned_by = ROOT
+						is_city = yes
+					}
+				}
+			}
+			south_iroquoisia_area = {
+				type = all
+				owned_by = ROOT
+				is_city = yes
+			}
+			hudson_valley_area = {
+				type = all
+				OR = {
+					NOT = { colonial_region = colonial_eastern_america }
+					AND = {
+						owned_by = ROOT
+						is_city = yes
+					}
+				}
+			}
+			2552 = {
+				owned_by = ROOT
+				is_city = yes
+			}
 		}
 		effect = {
 			965 = {
@@ -199,7 +258,7 @@
 					duration = 3650
 				}
 			}
-			954 = {
+			956 = {
 				change_trade_goods = fish
 				add_base_manpower = 1
 				add_base_production = 1
@@ -208,9 +267,12 @@
 					name = colonial_dev_modifier
 					duration = 3650
 				}
-			}	
-		new_york_area = { add_prosperity = 100}
-		delaware_valley_area = { add_prosperity = 100 }
+			}
+			upper_american_georgia_area = { add_prosperity = 100 }
+			chesapeake_area = { add_prosperity = 100 }
+			susquehanna_area = { add_prosperity = 100 }
+			south_iroquoisia_area = { add_prosperity = 100 }
+			hudson_valley_area = { add_prosperity = 100 }
 		}
 	}
 	13_colonies_future_america = { #MISSION TO PROC REVOLUTIONARY WAR
@@ -262,16 +324,21 @@
 		provinces_to_highlight = {
 			OR = {
 				area = connecticut_valley_area
+				area = west_florida_area
 				area = massachusetts_bay_area
+				area = iroquoisia_area
+				area = great_woods_area
+				area = maine_area
 			}
-			OR = {
-				NOT = { owned_by = ROOT }
-				is_city = no
-			}
-				
+			NOT = { owned_by = ROOT }
 		}
 		trigger = { 
 			connecticut_valley_area = {
+				type = all
+				owned_by = ROOT
+				is_city = yes
+			}
+			west_florida_area = {
 				type = all
 				owned_by = ROOT
 				is_city = yes
@@ -280,10 +347,25 @@
 				type = all
 				owned_by = ROOT
 				is_city = yes
-			}				
+			}
+			iroquoisia_area = {
+				type = all
+				owned_by = ROOT
+				is_city = yes
+			}
+			great_woods_area = {
+				type = all
+				owned_by = ROOT
+				is_city = yes
+			}
+			maine_area = {
+				type = all
+				owned_by = ROOT
+				is_city = yes
+			}
 		}
 		effect = {
-			2560 = {
+			2010 = {
 				change_trade_goods = fur
 				add_base_manpower = 1
 				add_base_production = 1
@@ -293,7 +375,7 @@
 					duration = 3650
 				}
 			}
-			966 = {
+			968 = {
 				change_trade_goods = fur
 				add_base_manpower = 1
 				add_base_production = 1
@@ -302,9 +384,13 @@
 					name = colonial_dev_modifier
 					duration = 3650
 				}
-			}	
-			connecticut_valley_area = { add_prosperity = 100}
+			}
+			connecticut_valley_area = { add_prosperity = 100 }
+			west_florida_area = { add_prosperity = 100 }
 			massachusetts_bay_area = { add_prosperity = 100 }
+			iroquoisia_area = { add_prosperity = 100 }
+			great_woods_area = { add_prosperity = 100 }
+			maine_area = { add_prosperity = 100 }
 		}
 	}
 }

@@ -102,7 +102,7 @@ mormon_rebels = {
 			NOT = { religion = mormon }
 			any_neighbor_province = {
 	 			religion = mormon
-	 			NOT = { has_province_modifier = "forced_conversion" }
+	 			NOT = { has_province_modifier = forced_conversion }
 	 		}
 	 	}
 		modifier = {
@@ -266,7 +266,12 @@ mormon_rebels = {
 			limit = { has_disaster = french_wars_of_religion }
 			end_disaster = french_wars_of_religion
 			remove_country_modifier = french_catholics
-			remove_country_modifier = french_mormons
+			#remove_country_modifier = french_mormons
+			#This line can be readded if:
+			#1- french_mormons is properly added to event modifiers
+			#2- disaster_french_wars_of_religion.txt is overwritten to give Mormonism as an option
+			#3- All the localisations are added (do I even need to say?)
+			#It'd be funny if France could go Mormon, but it's a b-tch to implement
 			remove_country_modifier = french_reformed
 			remove_country_modifier = support_heretics
 			set_country_flag = FRA_had_event_3199
